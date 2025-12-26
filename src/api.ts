@@ -10,7 +10,7 @@ export interface CustomerData {
   date: string;
 }
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://mobile-shop-backend-eta.vercel.app/api";
 
 const api = axios.create({
   baseURL: API_URL,
