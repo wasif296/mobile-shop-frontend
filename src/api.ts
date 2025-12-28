@@ -8,6 +8,10 @@ export interface CustomerData {
   model: string;
   emi: string;
   date: string;
+  price: string;
+  paidAmount: string;   
+  remainingAmount: string;          
+  type: 'Purchase' | 'Sale'; 
 }
 
 const API_URL = "https://mobile-shop-backend-eta.vercel.app/api";

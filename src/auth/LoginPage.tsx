@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Lock, Mail, Smartphone, Eye, EyeOff } from 'lucide-react'; // Eye icons add kiye
+import { Lock, Mail, Smartphone, Eye, EyeOff } from 'lucide-react'; 
 import toast, { Toaster } from 'react-hot-toast';
 import { loginUser } from '../api';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false); // Password dikhane ke liye state
+  const [showPassword, setShowPassword] = useState(false); 
   const navigate = useNavigate();
 
-  // --- 1. BACK BUTTON PROTECTION ---
-  // Agar user pehle se logged in hai, toh usay login page mat dikhao
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
     if (isLoggedIn) {
@@ -27,7 +25,6 @@ const LoginPage = () => {
         localStorage.setItem("isLoggedIn", "true");
         toast.success("Login Successful!");
         
-        // replace: true history stack se login page ko nikaal deta hai
         navigate("/dashboard", { replace: true });
       }
     } catch {
@@ -43,8 +40,8 @@ const LoginPage = () => {
           <div className="bg-teal-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
             <Smartphone className="text-white w-8 h-8" />
           </div>
-          <h1 className="text-2xl font-bold text-gray-800 tracking-tight">MobileHub Admin</h1>
-          <p className="text-gray-500 mt-2 text-sm">Enter credentials to access shop database</p>
+          <h1 className="text-2xl font-bold text-gray-800 tracking-tight">Mobile city</h1>
+          <p className="text-gray-500 mt-2 text-sm">Enter credentials to access </p>
         </div>
 
         <form onSubmit={handleLogin} className="space-y-6">
